@@ -1,0 +1,52 @@
+article[data-article-name] {
+	max-width: 90ch;
+
+	h2 {
+		margin-bottom: 1.4rem;
+	}
+
+	ul,
+	ol {
+		padding-inline-start: 2em;
+	}
+
+	:is(ul, ol) {
+		margin-block: 1rem;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	img {
+		margin-block: 1rem;
+	}
+
+	li > p:has(strong):first-child {
+		font-size: 1.2rem;
+		line-height: 2;
+	}
+}
+
+article[data-article-name='reservation'] {
+	> ol {
+		display: grid;
+		gap: 2.5rem;
+
+		> li::marker {
+			font-size: 1.4em;
+			font-weight: bold;
+		}
+	}
+}
+
+article[data-article-name='policy'] {
+	> ul {
+		display: grid;
+		gap: 1rem;
+	}
+}

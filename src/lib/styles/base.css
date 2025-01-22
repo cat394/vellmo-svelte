@@ -1,0 +1,171 @@
+:root {
+	--page-max-width: 1365px;
+	--side-space: 2rem;
+	--letter-spacing: 0.1em;
+	--theme: oklch(78.64% 0.1195 186.17);
+	--theme-contrast: white;
+	--text-primary: oklch(36.34% 0.089 52.9);
+	--bg-primary: white;
+	--bg-secondary: #fbd5d5;
+	--accent: red;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+*:not(span, em, strong) {
+	font-family: 'Noto Sans JP', sans-serif, system-ui;
+}
+
+body {
+	background: var(--bg-primary);
+}
+
+body:has(dialog[open]) {
+	overflow: hidden;
+}
+
+main {
+	width: 100%;
+	max-width: var(--page-max-width);
+	margin: auto;
+}
+
+main > *:not(.w-full) {
+	padding-inline: var(--side-space);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+th,
+td,
+label {
+	color: var(--text-primary);
+}
+
+p,
+th,
+td,
+li,
+label {
+	font-size: 1.1rem;
+}
+
+p {
+	word-break: break-word;
+}
+
+strong,
+em,
+b,
+th {
+	font-weight: normal;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+button,
+input,
+textarea {
+	color: currentColor;
+	font: inherit;
+}
+
+input,
+textarea {
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	background: var(--bg-secondary);
+	color: var(--text-primary);
+	padding: 1em;
+
+	&:focus {
+		outline: 3px solid var(--accent);
+	}
+}
+
+button {
+	border: none;
+	background: transparent;
+	width: max-content;
+	cursor: pointer;
+}
+
+label {
+	display: block;
+}
+
+textarea {
+	field-sizing: content;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+section > h2 {
+	margin-block-end: 1.65rem;
+}
+
+a {
+	text-decoration: underline var(--theme);
+	text-underline-offset: 3px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a[target='_blank'] {
+	text-decoration-color: var(--accent);
+
+	&::after {
+		content: '';
+		width: 0.8em;
+		height: 1em;
+		background-image: url('images/style/external.svg');
+		background-position: top;
+		background-size: cover;
+		display: inline-block;
+		padding-left: 0.2ch;
+		color: var(--accent);
+	}
+}
+
+table {
+	border-collapse: collapse;
+}
+
+dialog {
+	border: none;
+}
+
+hr {
+	border: none;
+}
