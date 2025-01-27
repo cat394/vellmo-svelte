@@ -16,7 +16,7 @@ Re: ゼロから始めるVell moサイト作り！ってことで、私のこれ
 
   当サイトの顔！とも言える、ページです。かわいらしい花柄を背景にした大きなヒーローセクションが目を惹きます。
 
-  ![Style & Color Vell mo のホームページの画像](./doc-images/home.png)
+  ![Style & Color Vell mo のホームページの画像](./doc-images/home-2.png)
 
 - **当店について**
 
