@@ -49,7 +49,7 @@
 		grid-template-rows: 1fr auto;
 		padding: 1.25rem;
 		background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-			url('images/style/menu-bg.webp');
+			url('/images/style/menu-bg.webp');
 		color: var(--_table-text);
 		border-radius: 5px;
 	}

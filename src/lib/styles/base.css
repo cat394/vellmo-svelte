@@ -149,7 +149,7 @@ a[target='_blank'] {
 		content: '';
 		width: 0.8em;
 		height: 1em;
-		background-image: url('images/style/external.svg');
+		background-image: url('/images/style/external.svg');
 		background-position: top;
 		background-size: cover;
 		display: inline-block;

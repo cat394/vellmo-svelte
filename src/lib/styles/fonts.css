@@ -1,20 +1,20 @@
 @font-face {
 	font-family: 'Arial Rounded MT';
-	src: url('fonts/ArialRoundedMTBold.ttf') format('truetype');
+	src: url('/fonts/ArialRoundedMTBold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Noto Sans JP';
-	src: url('fonts/NotoSansJP-Medium.ttf') format('truetype');
+	src: url('/fonts/NotoSansJP-Medium.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Noto Sans JP';
-	src: url('fonts/NotoSansJP-Bold.ttf') format('truetype');
+	src: url('/fonts/NotoSansJP-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }

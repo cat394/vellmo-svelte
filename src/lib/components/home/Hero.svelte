@@ -7,7 +7,7 @@
 
 <style>
 	section {
-		background-image: url('images/style/hero-bg.webp');
+		background-image: url('/images/style/hero-bg.webp');
 		background-position: right;
 		background-size: cover;
 		background-repeat: no-repeat;
