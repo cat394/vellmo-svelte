@@ -135,13 +135,8 @@ section > h2 {
 
 a {
 	text-decoration: underline var(--theme);
+	-webkit-text-decoration:  underline var(--theme);
 	text-underline-offset: 3px;
-
-	&:visited {
-		text-decoration: underline var(--theme);
-		text-underline-offset: 3px;
-		-webkit-text-decoration: underline var(--theme);
-	}
 }
 
 a[target='_blank'] {
