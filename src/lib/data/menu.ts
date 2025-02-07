@@ -78,7 +78,7 @@ export const menus: Menu[] = [
 			},
 			{
 				name: '縮毛矯正＋カット',
-				price: '15400'
+				price: '16500'
 			},
 			{
 				name: 'デジタルパーマ＋カット',
