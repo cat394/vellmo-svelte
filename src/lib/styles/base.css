@@ -143,7 +143,8 @@ a:hover {
 }
 
 a[target='_blank'] {
-	text-decoration: underline var(--accent);
+	text-decoration-style: underline;
+	text-decoration-color: var(--accent);
 
 	&::after {
 		content: '';
