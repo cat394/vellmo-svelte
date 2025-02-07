@@ -4,11 +4,24 @@
 	import { onNavigate } from '$app/navigation';
 	import { pageNameContext } from '$lib/context/pageName.svelte';
 	import { fade, fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
-	let isMenuOpen = $state(false);
+	let dialog = $state<HTMLDialogElement>();
+
+	function openDialog() {
+		if (!dialog) return;
+
+		dialog.showModal();
+	}
+
+	function closeDialog() {
+		if (!dialog) return;
+
+		dialog.close();
+	}
 
 	onNavigate(() => {
-		isMenuOpen = false;
+		closeDialog();
 	});
 </script>
 
@@ -30,41 +43,28 @@
 <header class="mobile">
 	<nav class="rounded">
 		<div class="side hover-effect"><a href={link('home')}>🏠 ホームへ</a></div>
-		<button
-			type="button"
-			onclick={() => {
-				isMenuOpen = !isMenuOpen;
-			}}
-			aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
-		>
-			{#if isMenuOpen}
-				<Icon name="close" width={30} height={30} color="var(--text-primary)" />
-			{:else}
-				<Icon name="hamburger" width={30} height={30} color="var(--text-primary)" />
-			{/if}
+		<button type="button" onclick={openDialog} aria-label="メニューを開く">
+			<Icon name="hamburger" width={30} height={30} color="var(--text-primary)" />
 		</button>
 		<div class="side hover-effect"><p>{pageNameContext.currentPageName}</p></div>
 	</nav>
 </header>
 
-{#if isMenuOpen}
-	<div class="menu-container" class:open={isMenuOpen} transition:fly={{ x: 300, duration: 300 }}>
-		<dialog class="menu" open={isMenuOpen}>
-			<h2>ご案内</h2>
-			<ul>
-				<li><a href={link('about')}>当店について</a></li>
-				<li><a href={link('price')}>メニュー</a></li>
-				<li><a href={link('products')}>取り扱い商品</a></li>
-				<li><a href={link('others')}>その他サービス</a></li>
-				<li><a href={link('reservation')}>予約する</a></li>
-			</ul>
-		</dialog>
-	</div>
-{/if}
-
-{#if isMenuOpen}
-	<div class="cover" class:visible={isMenuOpen} transition:fade></div>
-{/if}
+<dialog bind:this={dialog}>
+	<h2>ご案内</h2>
+	<ul>
+		<li><a href={link('about')}>当店について</a></li>
+		<li><a href={link('price')}>メニュー</a></li>
+		<li><a href={link('products')}>取り扱い商品</a></li>
+		<li><a href={link('others')}>その他サービス</a></li>
+		<li><a href={link('reservation')}>予約する</a></li>
+		<li>
+			<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
+				><Icon name="close" width={30} height={30} color="var(--text-primary)" /></button
+			>
+		</li>
+	</ul>
+</dialog>
 
 <style>
 	header.desktop {
@@ -154,61 +154,62 @@
 		}
 	}
 
-	.cover {
-		position: fixed;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(255, 255, 255, 0.8);
-		z-index: 1;
-	}
+	dialog {
+		width: 90%;
+		margin: auto;
+		max-width: 31rem;
+		padding: 2.5rem;
+		background: #ffffffc8;
+		box-shadow: 0px 0px 25px -4px var(--bg-secondary);
+		border-radius: 5px;
+		animation: slide-out 300ms ease-out;
 
-	.menu-container {
-		display: grid;
-		position: fixed;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
-
-		&.open {
-			display: grid;
+		&[open] {
+			animation: slide-in 300ms ease-out;
 		}
 
-		.menu {
-			width: 90%;
-			margin: auto;
-			max-width: 31rem;
-			padding: 2.5rem;
-			place-self: center;
-			background: #ffffffc8;
-			box-shadow: 0px 0px 25px -4px var(--bg-secondary);
-			border-radius: 5px;
+		&::backdrop {
+			animation: backdrop-fade-in 300ms ease-out forwards;
+		}
 
-			> h2 {
-				margin-block-end: 1rem;
-				text-align: center;
+		&[open]::backdrop {
+			opacity: 1;
+		}
+
+		> h2 {
+			margin-block-end: 1rem;
+			text-align: center;
+		}
+
+		> ul {
+			display: grid;
+			gap: 2rem;
+			font-size: 1.3rem;
+
+			> li {
+				padding-block: 0.2rem;
+				padding-inline-start: 1em;
+				border-block-end: 1px solid var(--theme);
 			}
 
-			> ul {
-				display: grid;
-				gap: 2rem;
-				font-size: 1.3rem;
+			> li:last-child {
+				border: 0px;
+				justify-self: center;
+			}
 
-				> li {
-					padding-block: 0.2rem;
-					padding-inline-start: 1em;
-					border-block-end: 1px solid var(--theme);
-				}
+			> li:last-child button {
+				line-height: 0;
+				border: 2px solid var(--text-primary);
+				padding: 0.2rem;
+			}
 
-				> li:hover {
-					border-color: var(--accent);
-				}
+			> li:hover {
+				border-color: var(--accent);
+			}
 
-				a {
-					display: block;
-					text-decoration: none;
-				}
+			a {
+				display: block;
+				text-decoration: none;
 			}
 		}
 	}
@@ -220,6 +221,44 @@
 
 		header.mobile {
 			display: grid;
+		}
+	}
+
+	@keyframes slide-in {
+		0% {
+			opacity: 0;
+			translate: 300px;
+			display: none;
+		}
+
+		100% {
+			opacity: 1;
+			translate: 0px;
+			display: block;
+		}
+	}
+
+	@keyframes slide-out {
+		0% {
+			opacity: 1;
+			translate: 0px;
+			display: block;
+		}
+
+		100% {
+			opacity: 0;
+			translate: 300px;
+			display: none;
+		}
+	}
+
+	@keyframes backdrop-fade-in {
+		0% {
+			background: rgba(255, 255, 255, 0);
+		}
+
+		100% {
+			background: rgba(255, 255, 255, 0.8);
 		}
 	}
 </style>
