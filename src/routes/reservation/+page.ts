@@ -1,13 +1,9 @@
 import { error } from '@sveltejs/kit';
 
-export const prerender = false;
-
 export async function load() {
 	try {
-		const pathToReservation = '../../lib/articles/reservation.md';
-
-		 /* @vite-ignore */
-		const reservation = await import(pathToReservation);
+		 /* @ts-ignore */
+		const reservation = await import('../../lib/articles/reservation.md');
 
 		return {
 			reservation: {

@@ -4,10 +4,8 @@ export const prerender = false;
 
 export async function load() {
 	try {
-		const pathToCredit = '../../lib/articles/credit.md';
-		const pathToPolicy = '../../lib/articles/policy.md';
-
-		const [credit, policy] = await Promise.all([import(pathToCredit), import(pathToPolicy)]);
+		/* @ts-ignore */ 
+		const [credit, policy] = await Promise.all([import('../../lib/articles/credit.md'), import('../../lib/articles/policy.md')]);
 
 		return {
 			credit: {
