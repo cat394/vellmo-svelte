@@ -169,11 +169,7 @@
 		}
 
 		&::backdrop {
-			animation: backdrop-fade-in 300ms ease-out forwards;
-		}
-
-		&[open]::backdrop {
-			opacity: 1;
+			background: rgb(255 255 255 / 0.8);
 		}
 
 		> h2 {
@@ -249,16 +245,6 @@
 			opacity: 0;
 			translate: 300px;
 			display: none;
-		}
-	}
-
-	@keyframes backdrop-fade-in {
-		0% {
-			background: rgba(255, 255, 255, 0);
-		}
-
-		100% {
-			background: rgba(255, 255, 255, 0.8);
 		}
 	}
 </style>
