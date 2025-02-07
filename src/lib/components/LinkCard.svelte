@@ -34,6 +34,10 @@
 		&:hover {
 			translate: var(--_shadow-offset) var(--_shadow-offset);
 			box-shadow: 0px 0px 0px 0px var(--_shadow-color);
+
+			small {
+				text-decoration: none;
+			}
 		}
 	}
 
