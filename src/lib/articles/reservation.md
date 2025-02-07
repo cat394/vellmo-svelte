@@ -10,7 +10,7 @@
 
 1. **空いてる日を確認する**
 
-   <a href="https://calendar.google.com/calendar/embed?src=326855ca45ebc37d17ab7612fe61cd17e883197d895a60f5555323f957fc9366%40group.calendar.google.com&ctz=Asia%2FTokyo" target="_blank">当店の公開スケジュール</a>を確認し、お客様の方で都合の良い時間帯を見つけてください。
+   <a href="https://calendar.google.com/calendar/embed?src=326855ca45ebc37d17ab7612fe61cd17e883197d895a60f5555323f957fc9366%40group.calendar.google.com&ctz=Asia%2FTokyo" target="_blank">当店の公開カレンダー</a>を確認し、お客様の方で都合の良い時間帯を見つけてください。
 
    メニュー内容によって異なりますが、基本的にお一人様30分ほどと見積もっていただければと思います。
 

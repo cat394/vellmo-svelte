@@ -1,3 +1,7 @@
+<script>
+	import { link } from '$lib/link-generator';
+</script>
+
 <section>
 	<h2>当店のスケジュール</h2>
 	<iframe
@@ -9,11 +13,23 @@
 		frameborder="0"
 		scrolling="no"
 	></iframe>
+	<p>
+		希望する時間帯が空いているかどうかを調べるためには、<a
+			href="https://calendar.google.com/calendar/embed?src=326855ca45ebc37d17ab7612fe61cd17e883197d895a60f5555323f957fc9366%40group.calendar.google.com&ctz=Asia%2FTokyo"
+			target="_blank">当店の公開カレンダー</a
+		>をご覧ください。予約が入っている枠は『予定あり』と書かれています。
+	</p>
 </section>
 
 <style>
+	p {
+		display: none;
+	}
 	@media (width < 856px) {
-		section {
+		p {
+			display: block;
+		}
+		iframe {
 			display: none;
 		}
 	}

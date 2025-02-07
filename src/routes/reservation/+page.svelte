@@ -19,14 +19,6 @@
 <PageTitle title="Reservation" />
 
 <ShopCalender />
-<hr />
+<hr class="border"/>
 <Article name="reservation" content={data.reservation.content} />
 
-<style>
-	/* カレンダーがこの幅で消えるため、区切りもなくす */
-	@media (width < 865px) {
-		hr {
-			display: none;
-		}
-	}
-</style>
