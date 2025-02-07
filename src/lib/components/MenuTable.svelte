@@ -1,4 +1,7 @@
 <script lang="ts">
+	import "scroll-hint/css/scroll-hint.css";
+	import ScrollHint from 'scroll-hint';
+	import { onMount } from 'svelte';
 	import type { Menu } from '$lib/data/menu';
 
 	interface Props {
@@ -8,6 +11,15 @@
 	}
 
 	let { title, plans, repletion }: Props = $props();
+
+	onMount(() => {
+		new ScrollHint('.scroll-container', {
+			scrollHintIconAppendClass: 'scroll-hint-icon-white',
+			i18n: {
+				scrollable: 'スクロールできます'
+			}
+		});
+	});
 </script>
 
 <div class="container">
