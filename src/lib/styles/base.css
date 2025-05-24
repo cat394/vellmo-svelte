@@ -135,11 +135,11 @@ section > h2 {
 
 a {
 	text-decoration: underline var(--theme);
-	-webkit-text-decoration:  underline var(--theme);
+	-webkit-text-decoration: underline var(--theme);
 	text-underline-offset: 3px;
 }
 
-a[target='_blank'] {
+a:not(.button)[target='_blank'] {
 	text-decoration: underline var(--accent);
 	-webkit-text-decoration: underline var(--accent);
 
