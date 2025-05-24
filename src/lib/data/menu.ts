@@ -33,7 +33,7 @@ export const menus: Menu[] = [
 		plans: [
 			{
 				name: '全体染め',
-				price: '6600～'
+				price: '7700～'
 			},
 			{
 				name: 'リタッチ',
