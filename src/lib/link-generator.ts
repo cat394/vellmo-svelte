@@ -18,9 +18,6 @@ const route_config = {
 	products: {
 		path: '/products'
 	},
-	reservation: {
-		path: '/reservation'
-	},
 	contact: {
 		path: '/contact'
 	},
@@ -33,6 +30,9 @@ const route_config = {
 	external: {
 		path: 'https://',
 		children: {
+			hotpepper: {
+				path: 'https://beauty.hotpepper.jp/slnH000755832/'
+			},
 			form: {
 				path: 'ssgform.com/s/aDSyajnIlm3n'
 			},
