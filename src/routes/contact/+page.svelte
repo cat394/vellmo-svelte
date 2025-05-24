@@ -10,7 +10,7 @@
 	name="contact"
 	path={link('contact')}
 	description={`${shop.name}へのお問い合わせはこちらのページからどうぞ。ご予約やご質問はお気軽にお問い合わせください。`}
-	keywords={['お問い合わせ', '予約', 'サポート', 'LINE']}
+	keywords={['お問い合わせ', 'サポート', 'LINE']}
 ></Head>
 
 <PageTitle title="Contact" />
