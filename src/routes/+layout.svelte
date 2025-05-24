@@ -12,7 +12,7 @@
 	<link rel="shortcut icon" href="favicon/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
 	<meta name="msapplication-TileColor" content="#da532c" />
-	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="manifest" href="favicon/site.webmanifest" />
 	<meta name="msapplication-config" content="favicon/browserconfig.xml" />
 	<meta property="og:image" content="favicon/favicon.ico" />
 	<meta property="og:type" content="website" />

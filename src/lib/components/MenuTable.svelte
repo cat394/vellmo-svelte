@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "scroll-hint/css/scroll-hint.css";
+	import 'scroll-hint/css/scroll-hint.css';
 	import ScrollHint from 'scroll-hint';
 	import { onMount } from 'svelte';
 	import type { Menu } from '$lib/data/menu';

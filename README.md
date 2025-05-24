@@ -101,5 +101,5 @@ npm run dev
 ### アプリをビルドする
 
 ```bash
-npm run build 
+npm run build
 ```

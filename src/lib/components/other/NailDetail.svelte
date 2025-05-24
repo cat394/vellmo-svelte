@@ -38,7 +38,13 @@
 
 <style>
 	section {
-		background-image:  repeating-linear-gradient(135deg, transparent, transparent 18px, var(--bg-secondary) 18px, var(--bg-secondary) 28px );
+		background-image: repeating-linear-gradient(
+			135deg,
+			transparent,
+			transparent 18px,
+			var(--bg-secondary) 18px,
+			var(--bg-secondary) 28px
+		);
 		padding: 1.5rem;
 	}
 
