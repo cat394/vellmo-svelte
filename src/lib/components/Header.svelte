@@ -35,7 +35,7 @@
 			<li><a href={link('price')}>メニュー</a></li>
 			<li><a href={link('products')}>取り扱い商品</a></li>
 			<li><a href={link('others')}>その他サービス</a></li>
-			<li><a href={link('reservation')} class="button">予約する</a></li>
+			<li><a href={link('external/hotpepper')} class="button" target="_blank">予約する</a></li>
 		</ul>
 	</nav>
 </header>
@@ -57,7 +57,7 @@
 		<li><a href={link('price')}>メニュー</a></li>
 		<li><a href={link('products')}>取り扱い商品</a></li>
 		<li><a href={link('others')}>その他サービス</a></li>
-		<li><a href={link('reservation')}>予約する</a></li>
+		<li><a href={link('external/hotpepper')} target="_blank">予約する</a></li>
 		<li>
 			<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
 				><Icon name="close" width={30} height={30} color="var(--text-primary)" /></button
