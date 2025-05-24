@@ -12,19 +12,19 @@ export const menus: Menu[] = [
 		plans: [
 			{
 				name: '一般',
-				price: '3850'
+				price: '4550'
 			},
 			{
 				name: '中高生',
-				price: '2750'
+				price: '3500'
 			},
 			{
 				name: '小学生',
-				price: '2200'
+				price: '2500'
 			},
 			{
 				name: '幼児',
-				price: '1650'
+				price: '2000'
 			}
 		]
 	},
