@@ -31,7 +31,7 @@ const route_config = {
 		path: 'https://',
 		children: {
 			hotpepper: {
-				path: 'https://beauty.hotpepper.jp/slnH000755832/'
+				path: 'beauty.hotpepper.jp/slnH000755832/'
 			},
 			form: {
 				path: 'ssgform.com/s/aDSyajnIlm3n'
