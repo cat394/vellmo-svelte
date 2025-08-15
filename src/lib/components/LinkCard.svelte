@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLAttributes<HTMLAnchorElement> {
+	interface Props extends HTMLAnchorAttributes {
 		headingLevel: 1 | 2 | 3;
 		title: string;
 		description: string;
