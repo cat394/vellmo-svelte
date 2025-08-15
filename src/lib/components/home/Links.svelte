@@ -41,6 +41,6 @@
 	section {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(262px, 100%), 1fr));
-		gap: 20px;
+		gap: 30px;
 	}
 </style>
