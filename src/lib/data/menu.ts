@@ -2,7 +2,8 @@ export interface Menu {
 	category: string;
 	plans: {
 		name: string;
-		price: string;
+		price: number;
+		description?: string;
 	}[];
 }
 
@@ -12,19 +13,15 @@ export const menus: Menu[] = [
 		plans: [
 			{
 				name: '一般',
-				price: '4550'
+				price: 4550
 			},
 			{
-				name: '中高生',
-				price: '3500'
+				name: '中学生・高校生',
+				price: 3500
 			},
 			{
-				name: '小学生',
-				price: '2500'
-			},
-			{
-				name: '幼児',
-				price: '2000'
+				name: '子供(小学生以下)',
+				price: 2200
 			}
 		]
 	},
@@ -32,57 +29,29 @@ export const menus: Menu[] = [
 		category: 'カラー',
 		plans: [
 			{
-				name: '全体染め',
-				price: '7700～'
+				name: 'カラー＋カット',
+				price: 7700,
+				description: 'リタッチ45日以内'
 			},
 			{
-				name: 'リタッチ',
-				price: '4400～'
+				name: 'カラー全体染め＋カット',
+				price: 9900,
+				description: 'ロングは＋￥1100'
 			},
 			{
-				name: 'カット＆カラー',
-				price: '7700～'
+				name: 'カラー(リタッチのみ)',
+				price: 5500,
+				description: 'リタッチ2cm以内'
 			},
 			{
-				name: 'カット＆リタッチ',
-				price: '5500～'
+				name: '店長イチオシ！和漢カラー＋カット＋トリートメント',
+				price: 13200,
+				description: 'ハーブトリートメントカラー'
 			},
 			{
-				name: '和漢カラー',
-				price: '9900～'
-			},
-			{
-				name: 'ヘナ',
-				price: '7700～'
-			}
-		]
-	},
-	{
-		category: 'パーマ',
-		plans: [
-			{
-				name: 'ストレート(カット込み)',
-				price: '7700～'
-			},
-			{
-				name: '縮毛矯正(カット込み)',
-				price: '9000'
-			},
-			{
-				name: '縮毛矯正(ポイントのみ)',
-				price: '8800～'
-			},
-			{
-				name: 'デジタルパーマ(ポイントのみ)',
-				price: '8500～'
-			},
-			{
-				name: '縮毛矯正＋カット',
-				price: '16500'
-			},
-			{
-				name: 'デジタルパーマ＋カット',
-				price: '15400'
+				name: '和漢カラーのみ',
+				price: 7700,
+				description: '和漢ハーブカラー'
 			}
 		]
 	},
@@ -91,47 +60,47 @@ export const menus: Menu[] = [
 		plans: [
 			{
 				name: 'ワンカラー',
-				price: '4400'
+				price: 4400
 			},
 			{
 				name: 'グラデーション',
-				price: '4400'
+				price: 4400
 			},
 			{
 				name: 'マグネット',
-				price: '4950'
+				price: 4950
 			},
 			{
 				name: 'ミラー(ワンカラーまたはグラデ)',
-				price: '4950'
+				price: 4950
 			},
 			{
 				name: 'フレンチ',
-				price: '4950'
+				price: 4950
 			},
 			{
 				name: '＋ミニオプション',
-				price: '550'
+				price: 550
 			},
 			{
 				name: '＋ベースカラー追加',
-				price: '1100'
+				price: 1100
 			},
 			{
 				name: '＋カラー１色追加',
-				price: '110'
+				price: 110
 			},
 			{
 				name: '＋マットコート',
-				price: '550'
+				price: 550
 			},
 			{
 				name: '定額A',
-				price: '4950'
+				price: 4950
 			},
 			{
 				name: '定額B',
-				price: '5500'
+				price: 5500
 			}
 		]
 	},
@@ -139,28 +108,28 @@ export const menus: Menu[] = [
 		category: 'その他',
 		plans: [
 			{
-				name: 'トリートメント',
-				price: '1650～3850'
+				name: 'パーマ＋カット',
+				price: 9900
 			},
 			{
-				name: 'スキャルプ',
-				price: '1650～3850'
+				name: 'デジタルパーマ＋カット',
+				price: 21000
 			},
 			{
-				name: 'シャンプーブロー',
-				price: '1650～'
+				name: '縮毛矯正(ポイント前髪のみ)',
+				price: 9900
 			},
 			{
-				name: '着付け',
-				price: '8800'
+				name: '縮毛矯正＋カット',
+				price: 21000
 			},
 			{
-				name: '振袖',
-				price: '15400'
+				name: '縮毛矯正＋カット＋カラー',
+				price: 23000
 			},
 			{
 				name: 'パリジェンヌ(まつ毛カール)',
-				price: '6600'
+				price: 6600
 			}
 		]
 	}
