@@ -19,5 +19,5 @@
 <View />
 <hr class="border" />
 <Features />
-<hr style="--space:10rem;" />
+<hr style="--space:8rem;" />
 <Links />
