@@ -3,8 +3,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { onNavigate } from '$app/navigation';
 	import { pageNameContext } from '$lib/context/pageName.svelte';
-	import { fade, fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 
 	let dialog = $state<HTMLDialogElement>();
 
@@ -31,11 +30,23 @@
 			<img src={link('images/logo')} alt="" width="64" height="30" />
 		</a>
 		<ul>
-			<li><a href={link('about')}>当店について</a></li>
-			<li><a href={link('price')}>メニュー</a></li>
-			<li><a href={link('products')}>取り扱い商品</a></li>
-			<li><a href={link('others')}>その他サービス</a></li>
-			<li><a href={link('external/hotpepper')} class="button" target="_blank">予約する</a></li>
+			<li>
+				<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
+			</li>
+			<li>
+				<a href={link('price')} aria-current={page.url.pathname === link('price')}>メニュー</a>
+			</li>
+			<li>
+				<a href={link('products')} aria-current={page.url.pathname === link('products')}
+					>取り扱い商品</a
+				>
+			</li>
+			<li>
+				<a href={link('others')} aria-current={page.url.pathname === link('others')}
+					>その他サービス</a
+				>
+			</li>
+			<li><a href={link('external/line')} class="button" target="_blank">LINEで予約</a></li>
 		</ul>
 	</nav>
 </header>
@@ -53,11 +64,20 @@
 <dialog bind:this={dialog}>
 	<h2>ご案内</h2>
 	<ul>
-		<li><a href={link('about')}>当店について</a></li>
-		<li><a href={link('price')}>メニュー</a></li>
-		<li><a href={link('products')}>取り扱い商品</a></li>
-		<li><a href={link('others')}>その他サービス</a></li>
-		<li><a href={link('external/hotpepper')} target="_blank">予約する</a></li>
+		<li>
+			<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
+		</li>
+		<li><a href={link('price')} aria-current={page.url.pathname === link('price')}>メニュー</a></li>
+		<li>
+			<a href={link('products')} aria-current={page.url.pathname === link('products')}
+				>取り扱い商品</a
+			>
+		</li>
+		<li>
+			<a href={link('others')} aria-current={page.url.pathname === link('others')}>その他サービス</a
+			>
+		</li>
+		<li><a href={link('external/line')} target="_blank">LINEで予約</a></li>
 		<li>
 			<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
 				><Icon name="close" width={30} height={30} color="var(--text-primary)" /></button
