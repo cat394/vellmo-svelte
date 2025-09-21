@@ -87,6 +87,9 @@
 </dialog>
 
 <style>
+	a[aria-current='true'] {
+		text-decoration-color: var(--accent) !important;
+	}
 	header.desktop {
 		width: 100%;
 		position: sticky;
