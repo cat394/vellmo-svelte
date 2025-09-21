@@ -30,14 +30,11 @@ const route_config = {
 	external: {
 		path: 'https://',
 		children: {
-			hotpepper: {
-				path: 'beauty.hotpepper.jp/slnH000755832/'
+			line: {
+				path: 'lin.ee/PjB4ayi'
 			},
 			form: {
 				path: 'ssgform.com/s/aDSyajnIlm3n'
-			},
-			line: {
-				path: 'line.me/ti/p/RhcSpjpQ90#~'
 			},
 			prolabo: {
 				path: 'esthepro-labo.com'
