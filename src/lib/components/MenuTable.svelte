@@ -29,8 +29,11 @@
 			<tbody>
 				{#each plans as plan}
 					<tr>
-						<th scope="col">{plan.name}</th>
-						<td>{plan.price}円</td>
+						<th scope="col">
+							<p>{plan.name}</p>
+							<p><small>{plan.description}</small></p>
+						</th>
+						<td>￥{new Intl.NumberFormat('ja-JP').format(plan.price)}</td>
 					</tr>
 				{/each}
 			</tbody>
@@ -79,6 +82,9 @@
 		border-bottom: var(--_border-style) #cda4a4;
 		padding: 1rem 2rem;
 		font-size: 1.2rem;
+	}
+	th > p,
+	td {
 		text-align: left;
 	}
 
