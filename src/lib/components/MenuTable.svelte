@@ -68,6 +68,10 @@
 		border-radius: 5px;
 		border-collapse: collapse;
 		width: 100%;
+
+		small {
+			font-size: 0.8em;
+		}
 	}
 
 	tr {
