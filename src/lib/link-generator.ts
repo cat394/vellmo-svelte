@@ -21,9 +21,6 @@ const route_config = {
 	contact: {
 		path: '/contact'
 	},
-	site: {
-		path: '/site'
-	},
 	others: {
 		path: '/others'
 	},
