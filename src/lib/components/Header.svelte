@@ -65,7 +65,7 @@
 			>
 	<ul>
 		<li>
-			<a href={link('home')} aria-current={page.url.pathname === link('about')}>トップページ</a>
+			<a href={link('home')} aria-current={page.url.pathname === link('home')}>トップページ</a>
 		</li>
 		<li>
 			<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
