@@ -60,6 +60,9 @@
 
 <dialog bind:this={dialog}>
 	<h2>ご案内</h2>
+				<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
+				><Icon name="close" width={30} height={30} color="white" /></button
+			>
 	<ul>
 		<li>
 			<a href={link('home')} aria-current={page.url.pathname === link('about')}>トップページ</a>
@@ -78,11 +81,6 @@
 			>
 		</li>
 		<li><a href={link('external/line')} target="_blank">LINEで予約</a></li>
-		<li>
-			<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
-				><Icon name="close" width={30} height={30} color="var(--text-primary)" /></button
-			>
-		</li>
 	</ul>
 </dialog>
 
@@ -150,6 +148,17 @@
 			background: rgb(255 255 255 / 0.8);
 		}
 
+		> button {
+			width: 40px;
+			height: 40px;
+			display: grid;
+			place-items: center;
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			background-color: var(--text-primary);
+		}
+
 		> h2 {
 			margin-block-end: 1rem;
 			text-align: center;
@@ -164,17 +173,6 @@
 				padding-block: 0.2rem;
 				padding-inline-start: 1em;
 				border-block-end: 1px solid var(--theme);
-			}
-
-			> li:last-child {
-				border: 0px;
-				justify-self: center;
-			}
-
-			> li:last-child button {
-				line-height: 0;
-				border: 2px solid var(--text-primary);
-				padding: 0.2rem;
 			}
 
 			> li:hover {
