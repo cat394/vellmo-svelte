@@ -1,4 +1,4 @@
-export const siteURL = 'https://vellmo.netlify.com';
+export const siteDomain = 'https://vellmo.netlify.com';
 export const shop = {
 	name: 'Style & Color Vell mo',
 	tel: '0297-85-2407',

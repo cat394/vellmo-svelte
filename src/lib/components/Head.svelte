@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PageNames } from '$lib/context/pageName.svelte';
-	import { shop, siteURL } from '$lib/data/shop';
+	import { shop, siteDomain } from '$lib/data/shop';
 	import type { Snippet } from 'svelte';
 
 	interface Props {
@@ -26,8 +26,8 @@
 	<meta name="keywords" content={keywords.join(', ')} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:url" content={siteURL + path} />
+	<meta property="og:url" content={siteDomain + path} />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content={`${siteURL}/images/og-image.jpg`} />
+	<meta property="og:image" content={`${siteDomain}/images/og-image.jpg`} />
 	{@render children?.()}
 </svelte:head>
