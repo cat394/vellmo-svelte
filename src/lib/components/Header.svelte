@@ -173,6 +173,10 @@
 				padding-block: 0.2rem;
 				padding-inline-start: 1em;
 				border-block-end: 1px solid var(--theme);
+
+				&:has(a[aria-current='true']) {
+					border-color: var(--accent);
+				}
 			}
 
 			> li:hover {
