@@ -6,7 +6,7 @@ export enum PageNames {
 	price = '当店のメニュー',
 	products = '商品ページ',
 	others = 'その他サービス',
-	contact = 'お問い合わせ',
+	contact = 'お問い合わせ'
 }
 
 class PageNameContext {

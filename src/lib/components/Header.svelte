@@ -61,7 +61,7 @@
 <dialog bind:this={dialog}>
 	<h2>ご案内</h2>
 	<ul>
-				<li>
+		<li>
 			<a href={link('home')} aria-current={page.url.pathname === link('about')}>トップページ</a>
 		</li>
 		<li>
