@@ -2,7 +2,6 @@
 	import { link } from '$lib/link-generator';
 	import Icon from '$lib/components/Icon.svelte';
 	import { onNavigate } from '$app/navigation';
-	import { pageNameContext } from '$lib/context/pageName.svelte';
 	import { page } from '$app/state';
 
 	let dialog = $state<HTMLDialogElement>();
@@ -53,17 +52,18 @@
 
 <header class="mobile">
 	<nav class="rounded">
-		<div class="side hover-effect"><a href={link('home')}>🏠 ホームへ</a></div>
 		<button type="button" onclick={openDialog} aria-label="メニューを開く">
 			<Icon name="hamburger" width={30} height={30} color="var(--text-primary)" />
 		</button>
-		<div class="side hover-effect"><p>{pageNameContext.currentPageName}</p></div>
 	</nav>
 </header>
 
 <dialog bind:this={dialog}>
 	<h2>ご案内</h2>
 	<ul>
+				<li>
+			<a href={link('home')} aria-current={page.url.pathname === link('about')}>トップページ</a>
+		</li>
 		<li>
 			<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
 		</li>
@@ -118,62 +118,17 @@
 	header.mobile {
 		display: none;
 		position: fixed;
-		width: 100%;
-		left: 0;
-		bottom: 10px;
+		right: 20px;
+		bottom: 20px;
 		z-index: 10;
+		padding: 10px;
+		background-color: white;
+		border-radius: 1000px;
+		border: 2px solid var(--theme);
 
-		nav {
-			--border-style: 2px solid;
-
-			width: 100%;
-			max-width: 700px;
-			margin: auto;
-			justify-self: center;
+		button {
 			display: grid;
-			grid-template-columns: 1fr 0.5fr 1fr;
-			justify-content: space-between;
-			justify-items: center;
-			border: var(--border-style) var(--text-primary);
-			background: var(--bg-secondary);
-			overflow: hidden;
-
-			.side {
-				width: 100%;
-				text-align: center;
-
-				> * {
-					padding-block: 0.5rem;
-				}
-			}
-
-			> *:first-child {
-				font-weight: bold;
-			}
-
-			> button {
-				width: 100%;
-				display: grid;
-				justify-content: center;
-				align-content: center;
-				border-inline: var(--border-style) white;
-				padding-inline: 0.3rem;
-				background: transparent;
-			}
-
-			a,
-			p {
-				text-align: center;
-				font-size: 13px;
-			}
-
-			a {
-				color: var(--text-primary);
-				display: block;
-				height: 100%;
-				text-decoration-style: dashed;
-				text-decoration-color: currentColor;
-			}
+			place-items: center;
 		}
 	}
 
