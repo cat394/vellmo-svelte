@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { shop } from '$lib/data/shop';
 	import { link } from '$lib/link-generator';
 </script>
 
@@ -12,7 +11,6 @@
 			<li><a href={link('contact')}>お問い合わせ</a></li>
 		</ul>
 	</div>
-	<p><small>このサイトの権利は、{shop.name}に帰属しています。</small></p>
 </footer>
 
 <style>
@@ -44,8 +42,7 @@
 		gap: 2rem;
 	}
 
-	a,
-	p {
+	a {
 		color: var(--_text-color);
 	}
 
