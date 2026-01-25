@@ -1,5 +1,4 @@
 <script>
-	import { shop } from '$lib/data/shop';
 	import { link } from '$lib/link-generator';
 	import LinkCard from '../LinkCard.svelte';
 
@@ -25,7 +24,7 @@
 		style="--hue:159;"
 		{headingLevel}
 		title="製品一覧"
-		description={`${shop.name}では市販では売られていないような、様々な美容アイテムも取り扱っております。`}
+		description={"当店では市販では売られていないような、様々な美容アイテムも取り扱っております。"}
 		href={link('products')}
 	/>
 	<LinkCard
