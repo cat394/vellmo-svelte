@@ -7,7 +7,6 @@
 		<img src={link('images/logo')} alt="" width="100" height="46" />
 		<ul>
 			<li><a href={link('home')}>ホーム</a></li>
-			<li><a href={link('site')}>当サイトについて</a></li>
 			<li><a href={link('contact')}>お問い合わせ</a></li>
 		</ul>
 	</div>
@@ -18,7 +17,7 @@
 		--_text-color: white;
 		width: 100%;
 		margin-block-start: 13rem;
-		padding-block: 3rem 2rem;
+		padding-block: 3rem 4rem;
 		padding-inline: var(--side-space);
 		background: var(--accent);
 	}
@@ -44,20 +43,6 @@
 
 	a {
 		color: var(--_text-color);
-	}
-
-	a {
 		text-decoration-color: var(--_text-color);
-	}
-
-	p {
-		text-align: center;
-		margin-block-start: 2rem;
-	}
-
-	@media (width < 60rem) {
-		p {
-			margin-block-end: 2rem;
-		}
 	}
 </style>
