@@ -51,37 +51,41 @@
 </header>
 
 <header class="mobile">
-	<nav class="rounded">
-		<button type="button" onclick={openDialog} aria-label="メニューを開く">
-			<Icon name="hamburger" width={30} height={30} color="var(--text-primary)" />
-		</button>
-	</nav>
+	<button type="button" onclick={openDialog} aria-label="メニューを開く">
+		<Icon name="hamburger" width={30} height={30} color="var(--text-primary)" />
+	</button>
 </header>
 
-<dialog bind:this={dialog}>
+<dialog bind:this={dialog} onclick={(e) => { 
+	if (e.target === dialog) {
+		dialog.close()
+	}
+}}>
 	<h2>ご案内</h2>
-				<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
-				><Icon name="close" width={30} height={30} color="white" /></button
-			>
-	<ul>
-		<li>
-			<a href={link('home')} aria-current={page.url.pathname === link('home')}>トップページ</a>
-		</li>
-		<li>
-			<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
-		</li>
-		<li><a href={link('price')} aria-current={page.url.pathname === link('price')}>メニュー</a></li>
-		<li>
-			<a href={link('products')} aria-current={page.url.pathname === link('products')}
-				>取り扱い商品</a
-			>
-		</li>
-		<li>
-			<a href={link('others')} aria-current={page.url.pathname === link('others')}>その他サービス</a
-			>
-		</li>
-		<li><a href={link('external/line')} target="_blank">LINEで予約</a></li>
-	</ul>
+	<button class="rounded" type="button" onclick={closeDialog} aria-label="メニューを閉じる"
+		><Icon name="close" width={30} height={30} color="white" /></button
+	>
+	<nav>
+		<ul>
+			<li>
+				<a href={link('home')} aria-current={page.url.pathname === link('home')}>トップページ</a>
+			</li>
+			<li>
+				<a href={link('about')} aria-current={page.url.pathname === link('about')}>当店について</a>
+			</li>
+			<li><a href={link('price')} aria-current={page.url.pathname === link('price')}>メニュー</a></li>
+			<li>
+				<a href={link('products')} aria-current={page.url.pathname === link('products')}
+					>取り扱い商品</a
+				>
+			</li>
+			<li>
+				<a href={link('others')} aria-current={page.url.pathname === link('others')}>その他サービス</a
+				>
+			</li>
+			<li><a href={link('external/line')} target="_blank">LINEで予約</a></li>
+		</ul>
+	</nav>
 </dialog>
 
 <style>
@@ -164,7 +168,7 @@
 			text-align: center;
 		}
 
-		> ul {
+		nav > ul {
 			display: grid;
 			gap: 2rem;
 			font-size: 1.3rem;
